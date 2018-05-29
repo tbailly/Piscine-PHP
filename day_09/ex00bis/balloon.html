@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Balloon</title>
+	<style>
+		#balloon {
+			position: absolute;
+		    margin: auto;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border-radius: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon"></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		$("#balloon").click(clickCallback);
+		$("#balloon").mouseout(mouseoutCallback);
+		var colorTab = ["red", "green", "blue"];
+		var index = 0;
+
+		function clickCallback() {
+			if ($(this).height() + 10 <= 420) {
+				$(this).height($(this).height() + 10);
+				$(this).width($(this).width() + 10);
+			} else {
+				$(this).height(200);
+				$(this).width(200);
+			}
+			applyNewColor($(this), 1);
+		}
+
+		function mouseoutCallback() {
+			if ($(this).height() - 5 >= 200) {
+				$(this).height($(this).height() - 5);
+				$(this).width($(this).width() - 5);
+				applyNewColor($(this), -1);
+			}
+		}
+
+		function applyNewColor(elem, direction) {
+			if (direction > 0) {
+				index++;
+				if (index == 3)
+					index = 0;
+			} else {
+				index--;
+				if (index == -1)
+					index = 2;
+			}
+			elem.css("background-color", colorTab[index]);
+		}
+	</script>
+</body>
+</html>
+
+
+
+

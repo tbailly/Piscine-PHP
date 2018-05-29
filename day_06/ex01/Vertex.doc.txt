@@ -1,0 +1,16 @@
+The Vertex class handles coordinates for a point.
+
+An instance is constructed using x, y and z coordinates (mandatory):
+new Vertex( array( 'x' => 1.23, 'y' => 4.56, 'z' => 7.89 ) );
+
+Two other variable can also be added (coordinate w and color):
+new Vertex( array( 'x' => 1.23, 'y' => 4.56, 'z' => 7.89, 'w' => 2.3, 'color' => $color) );
+
+If w variable is set by default to 1.0.
+The color is set to default to white (255, 255, 255).
+
+x, y, z and w are converted to floats and their precision is not modified.
+color should be an instance of Color class.
+Any other use is undefined behaviour.
+
+The class provides no other methods than accessors.

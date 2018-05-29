@@ -1,0 +1,12 @@
+install VB
+
+resetbrew
+brew install docker
+brew install docker-machine
+docker-machine create -d "virtualbox" dXX
+eval $(docker-machine env dXX)
+docker run -d -p 8100:80 -v ~/http/MyWebSite/:/var/www/html --name apache akeneo/apache-php
+
+then docker is running and apache is up (with also port 80 connected to 8100 locally)
+docker-machine ip
+connect with http://ip:8100/

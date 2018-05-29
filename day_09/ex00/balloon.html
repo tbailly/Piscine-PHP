@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Balloon</title>
+	<style>
+		#balloon {
+			position: absolute;
+		    margin: auto;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border-radius: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon"></div>
+
+	<script>
+		var balloon = document.getElementById("balloon");
+		balloon.addEventListener("click", clickCallback);
+		balloon.addEventListener("mouseout", mouseoutCallback);
+		var colorTab = ["red", "green", "blue"];
+		var index = 0;
+
+		function clickCallback() {
+			if (this.clientHeight + 10 <= 420) {
+				this.style.height = (this.clientHeight + 10) + "px";
+				this.style.width = (this.clientWidth + 10) + "px";
+			} else {
+				this.style.height = "200px";
+				this.style.width = "200px";
+			}
+			applyNewColor(this, 1);
+		}
+
+		function mouseoutCallback() {
+			if (this.clientHeight - 5 >= 200) {
+				this.style.height = (this.clientHeight - 5) + "px";
+				this.style.width = (this.clientWidth - 5) + "px";
+				applyNewColor(this, -1);
+			}
+		}
+
+		function applyNewColor(elem, direction) {
+			if (direction > 0) {
+				index++;
+				if (index == 3)
+					index = 0;
+			} else {
+				index--;
+				if (index == -1)
+					index = 2;
+			}
+			elem.style.backgroundColor = colorTab[index];
+		}
+	</script>
+</body>
+</html>

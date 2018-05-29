@@ -1,0 +1,68 @@
+.order, .new-order {
+	padding: 5px;
+	text-align: center;
+}
+.order:nth-child(2n) {
+	background: #eee;
+}
+.order:nth-child(2n + 1) {
+	background: #ddd;
+}
+
+.new-order {
+	background-color: #aaa;
+}
+
+#main {
+	width: 70%;
+	margin: auto;
+}
+
+form {
+	display: inline-block;
+}
+
+input {
+    height: 16px;
+    padding: 5px;
+    font-size: 0.7rem;
+}
+
+input[value=delete] {
+    background: url(../img/delete.png);
+    background-position: center;
+    background-size: contain;
+    transform: translateY(-20%);
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    border: 0;
+    font-size: 0;
+}
+
+input[value=delete]:hover {
+	transform: translateY(-20%) scale(1.2);
+}
+
+input[value=Update],
+input[value=Create] {
+	border-radius: 1px;
+	height: 100%;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+input[value=Update]:hover,
+input[value=Create]:hover {
+	background-color: #333;
+	cursor: pointer;
+	color: white;
+	border-color: transparent;
+
+	-webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.p_of_ord {
+	display: inline;
+    margin: 5px;
+}

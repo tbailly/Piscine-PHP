@@ -1,0 +1,133 @@
+body {
+	margin: 0;
+	text-align: center;
+}
+
+h1 {
+	font-family: monospace;
+	font-size: 2vw;
+}
+
+.mendeleiev {
+	height: 100px;
+}
+
+#mendeleiev-tab {
+	margin: 0.5vw;
+}
+
+.cell {
+	width: 5.5vw;
+	height: 5.5vw;
+	position: relative;
+	display: inline-block;
+
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+
+	border: solid 1px;
+}
+
+.cell p {
+	position: absolute;
+	margin: 0;
+	font-family: monospace;
+}
+
+.cell .number,
+.cell .atomic-mass {
+	font-size: 0.8vw;
+	font-family: sans-serif;
+}
+
+.cell .name {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+}
+
+.cell .number {
+	bottom: 0.1vw;
+	left: 0.1vw;
+}
+
+.cell .atomic-mass {
+	top: 0.1vw;
+	right: 0.1vw;
+}
+
+
+/* COLORS */
+
+.met-al {
+	background: #EC644B;
+}
+
+.al-ter {
+	background: #FABE58;
+}
+
+.met-tr {
+	background: #87D37C;
+}
+
+.met-pau {
+	background: #F4D03F;
+}
+
+.metall {
+	background: #26A65B;
+}
+
+.non-met {
+	background: #663399;
+}
+
+.halo {
+	background: #DB0A5B;
+}
+
+.gaz-r {
+	background: #19B5FE;
+}
+
+.unk {
+	background: grey;
+}
+
+.lanth {
+	background: #019875;
+}
+
+.act {
+	background: #1E824C;
+}
+
+/* MARGIN LANTHANIDES */
+#mendeleiev-tab .cell:nth-child(n+91) {
+    margin-top: 5px;
+}
+
+#mendeleiev-tab .cell:nth-child(n+106) {
+    margin-top: 0;
+}
+
+
+/* ELEMENT SPECIFIC */
+#He {
+	margin-left: 88vw;
+}
+
+#B, #Al {
+	margin-left: 55vw;
+}
+
+#La, #Ac {
+	margin-left: 16.5vw;
+}
+#lanthanides p,
+#actinides p {
+	font-size: 0.7vw;
+}

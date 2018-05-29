@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<style>
+		input, select {
+			display: block;
+			margin: 10px auto;
+			height: 20px;
+		}
+		#calc {
+			width: 70%;
+			margin: auto;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="calc">
+		<input id="inputLeft" type="text" placeholder="Premier nombre">
+		<select id="operator">
+			<option value="">Opérateur</option>
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="inputRight" type="text" placeholder="Deuxième nombre">
+		<input id="submit" type="submit" value="Try me!">
+	</div>
+
+	<script>
+		document.getElementById("submit").addEventListener("click", doCalc);
+		setInterval(function(){
+			alert("Please, use me...");
+		}, 30000);
+
+		function doCalc() {
+			event.preventDefault();
+
+			var inputLeft = document.getElementById("inputLeft").value;
+			var inputRight = document.getElementById("inputRight").value;
+			var operator = document.getElementById("operator").value;
+
+			if (inputLeft.search(/^(\+|)[0-9]+$/) != -1 && inputRight.search(/^(\+|)[0-9]+$/) != -1 &&
+				(operator == "+" || operator == "-" || operator == "*" || operator == "/" || operator == "%")) {
+
+				if (parseInt(inputRight) == 0 && (operator == "/" || operator == "%")) {
+					alert("It's over 9000!");
+					console.log("It's over 9000!");
+					return;
+				}
+				var result = eval(inputLeft + operator + inputRight);
+				alert(result);
+				console.log(result);
+			} else {
+				alert("Error :(");
+			}
+		}
+
+	</script>
+</body>
+</html>

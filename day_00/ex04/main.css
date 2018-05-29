@@ -1,0 +1,204 @@
+p {
+	margin: 0;
+}
+.item-name {
+	font-family: sans-serif;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+/* MENU */
+.menu {
+	position: relative;
+	overflow: hidden;
+	
+	width: 0px;
+	-webkit-transition: width .5s;
+    transition: width .5s;
+}
+#menu-toggler input:checked ~ .menu {
+	transform: none;
+	overflow: visible;
+	
+	width: 100%;
+	-webkit-transition: width .5s;
+    transition: width .5s;
+}
+
+
+/* MENU ITEMS */
+.menu-item {
+	background: #0abde3;
+    /*overflow: hidden;*/
+}
+
+.menu-item:hover {
+	background: #48dbfb;
+}
+.menu-item > .item-name {
+	font-size: 1.3rem;
+}
+
+
+/* SUB-MENU */
+.menu-item > .sub-menu {
+	position: absolute;
+	top: 100%;
+    left: 0;
+    width: 0;
+	opacity: 0;
+}
+.menu-item:hover > .sub-menu {
+    width: 100%;
+	opacity: 1;
+	-webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+
+/* SUB-1 */
+.sub-1 {
+	background: #10ac84;
+}
+
+.sub-1:hover {
+	background: #1dd1a1;
+}
+
+.sub-1 > .item-name {
+	font-size: 1rem;
+}
+
+/* SUB-2 */
+.sub-2 {
+	background: #01a3a4;
+}
+
+.sub-2:hover {
+	background: #00d2d3;
+}
+
+.sub-2 > .item-name {
+	font-size: 0.7rem;
+}
+
+/* UTILITIES */
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6 {
+	display: inline-block;
+}
+
+.item-1 {
+	width: 100%;
+}
+
+.item-2 {
+	width: 50%;
+}
+
+.item-3 {
+	width: 33.33%;
+}
+
+.item-4 {
+	width: 25%;
+}
+
+.item-5 {
+	width: 20%;
+}
+
+.item-6 {
+	width: 16.66%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MENU TOGGLER */
+#menu-toggler input {
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	top: -7px;
+	left: -5px;
+
+	cursor: pointer;
+
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */
+
+	-webkit-touch-callout: none;
+}
+
+#menu-toggler span
+{
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+
+	background: #cdcdcd;
+	border-radius: 3px;
+
+	z-index: 1;
+
+	transform-origin: 4px 0px;
+  
+ 	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				opacity 0.55s ease;
+}
+
+#menu-toggler span:first-child
+{
+  transform-origin: 0% 0%;
+}
+#menu-toggler span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menu-toggler input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menu-toggler input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menu-toggler input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}

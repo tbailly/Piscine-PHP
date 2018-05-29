@@ -1,0 +1,76 @@
+#main {
+	width: 70%;
+	margin: auto;
+}
+h1,h2,h3,h4,h5,h6,p,a {
+    font-family: sans-serif;
+	text-decoration: none;
+	color: white;
+}
+
+a {
+	color:red;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+a.button-like {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    display: inline-block;
+	margin: 8px 0;
+}
+a.button-like:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 1.5rem;
+    text-align: center;
+    font-weight: lighter;
+}
+
+input {
+	display: block;
+    padding: 8px;
+    font-size: 1rem;
+	margin: 15px auto;
+}
+input:focus {
+	outline-color: #AAA;
+}
+.submit
+{
+	border-radius: 1px;
+}
+.submit,
+a.button-like {
+	-webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+.submit:hover,
+a.button-like:hover {
+	background-color: #333;
+	cursor: pointer;
+	color: white;
+	border-color: transparent;
+
+	-webkit-transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.error_message {
+	color: #dc3545;
+	text-align: center;
+}
+
+
+
+
+
+
+.button-wrapper {
+  text-align: center;
+}

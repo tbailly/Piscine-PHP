@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do List</title>
+	<style>
+
+		body {
+			margin: 0;
+		}
+
+		h1 {
+			text-align: center;
+		    font-family: sans-serif;
+		    letter-spacing: 0.05rem;
+		    color: #333;
+		}
+
+		#new {
+			position: fixed;
+		    bottom: 70px;
+		    right: 10px;
+		    height: 50px;
+		    width: 50px;
+		    border-radius: 100%;
+		    border: none;
+		    cursor: pointer;
+			background-color: #55efc4;
+
+			-webkit-transition: background-color 0.5s;
+	    	-moz-transition: background-color 0.5s;
+		    -o-transition: background-color 0.5s;
+		    transition: background-color 0.5s;
+		}
+		#new:hover {
+			background-color: #00b894;
+
+			-webkit-transition: background-color 0.5s;
+	    	-moz-transition: background-color 0.5s;
+		    -o-transition: background-color 0.5s;
+		    transition: background-color 0.5s;
+		}
+		
+		.list-elem {
+			padding: 5px;
+			margin: 1px;
+			border: 1px solid;
+			cursor: pointer;
+		    background-color: #74b9ff;
+		    font-size: 1.2rem;
+		    font-family: sans-serif;
+		    letter-spacing: 0.05rem;
+		    font-weight: lighter;
+		    color: #333;
+
+			-webkit-transition: background-color 0.5s;
+	    	-moz-transition: background-color 0.5s;
+		    -o-transition: background-color 0.5s;
+		    transition: background-color 0.5s;
+		}
+		.list-elem:hover {
+		    background-color: #0984e3;
+
+			-webkit-transition: background-color 0.5s;
+	    	-moz-transition: background-color 0.5s;
+		    -o-transition: background-color 0.5s;
+		    transition: background-color 0.5s;
+		}
+
+		#new-from-input {
+			position: fixed;
+		    bottom: 10px;
+		    right: 10px;
+		    height: 50px;
+		    width: 50px;
+		    border-radius: 100%;
+		    cursor: pointer;
+		    background-color: #0984e3;
+		    border: none;
+		    padding: 0;
+		}
+		#new-from-input svg {
+			height: 50px;
+			width: 50px;
+			fill: white;
+
+			-webkit-transition: transform 0.5s;
+	    	-moz-transition: transform 0.5s;
+		    -o-transition: transform 0.5s;
+			transition: transform 0.5s
+		}
+		#new-from-input.active svg {
+			transform: rotate(45deg);
+
+			-webkit-transition: transform 0.5s;
+	    	-moz-transition: transform 0.5s;
+		    -o-transition: transform 0.5s;
+			transition: transform 0.5s
+		}
+		button:focus,
+		input:focus {outline:0;}
+
+		#new-todo {
+			position: fixed;
+			bottom: 17px;
+			right: 32px;
+			height: 30px;
+			padding: 2px;
+			width: 0;
+			border: 1px solid black;
+			font-size: 1.2rem;
+		    font-family: sans-serif;
+		    letter-spacing: 0.05rem;
+		    font-weight: lighter;
+		    color: #333;
+
+			-webkit-transition: width 0.5s;
+	    	-moz-transition: width 0.5s;
+		    -o-transition: width 0.5s;
+			transition: width 0.5s;
+		}
+		#new-todo.active {
+			width: 80%;
+
+			-webkit-transition: width 0.5s;
+	    	-moz-transition: width 0.5s;
+		    -o-transition: width 0.5s;
+			transition: width 0.5s;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>To-Do list</h1>
+
+	<div id="ft_list">
+	</div>
+
+	<input id="new-todo" type="text" placeholder="New to-do...">
+	<button id="new-from-input">
+		<svg class="svg-icon" viewBox="0 0 20 20"><path d="M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"></path></svg>
+	</button>
+
+	<button id="new">New</button>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="todo.js"></script>
+</body>
+</html>
